@@ -1,0 +1,20 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_instance.dev (expand)" [label = "aws_instance.dev", shape = "box"]
+		"[root] aws_instance.prod (expand)" [label = "aws_instance.prod", shape = "box"]
+		"[root] data.aws_ami.amzn-linux-2023-ami (expand)" [label = "data.aws_ami.amzn-linux-2023-ami", shape = "box"]
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] var.istest" [label = "var.istest", shape = "note"]
+		"[root] aws_instance.dev (expand)" -> "[root] data.aws_ami.amzn-linux-2023-ami (expand)"
+		"[root] aws_instance.dev (expand)" -> "[root] var.istest"
+		"[root] aws_instance.prod (expand)" -> "[root] data.aws_ami.amzn-linux-2023-ami (expand)"
+		"[root] aws_instance.prod (expand)" -> "[root] var.istest"
+		"[root] data.aws_ami.amzn-linux-2023-ami (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_instance.dev (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_instance.prod (expand)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+	}
+}
+
