@@ -1,1 +1,2 @@
-#Terraform Training to prepare Hashicorp Terraform Associate Certified Exam git init!
+# EAZYTraining Course
+# Terraform Training to prepare Hashicorp Terraform Associate Certified Exam !
