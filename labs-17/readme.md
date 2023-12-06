@@ -1,0 +1,1 @@
+TERRAFORM IMPORT resource from aws platform already exist
